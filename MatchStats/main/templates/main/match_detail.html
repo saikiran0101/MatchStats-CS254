@@ -1,15 +1,67 @@
-<!-- match_detail.html -->
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Match Details</title>
-</head>
-<body>
-    <h1>Match Details</h1>
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title%}MatchStats{% endblock %}
 
-    <h2>{{ match.team1.name }} vs {{ match.team2.name }}</h2>
-    <p>Date: {{ match.date }}</p>
-    <p>Stadium: {{ match.stadium.name }}</p>
-    <!-- Add more match details as needed -->
-</body>
-</html>
+{% block content%}
+
+  <header style =" height : 300px">
+    <h1> {{match.team_1}}</h1>
+    <div><h1 class="display-1">{{match.score_1}}</h1></div>
+    <h1 class="display-1"> - </h1>
+    <div><h1 class="display-1">{{match.score_2}}</h1></div>
+    <h1>{{match.team_2}}</h1>
+  </header>
+
+  <h5 class=" align-text-end" align="left"> {{match.match_time}}</h6>
+<h5 class=" align-text-end" align="left"> {{match.stadium}}</h6>
+<br>
+<hr>
+{% if match.completed %}
+  <div class="container text-center">
+    <div class="row align-items-end">
+      <div class="col">
+        <h3>{{ match.shots_1 }}</h3>
+      </div>
+      <div class="col">
+        <h2>Shots</h2>
+      </div>
+      <div class="col">
+        <h3>{{ match.shots_2 }}</h3>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container text-center">
+    <div class="row align-items-end">
+      <div class="col">
+        <h3>{{ match.offsides_1 }}</h3>
+      </div>
+      <div class="col">
+        <h2>Offsides</h2>
+      </div>
+      <div class="col">
+        <h3>{{ match.offsides_2 }}</h3>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container text-center">
+    <div class="row align-items-end">
+      <div class="col">
+        <h3>{{ match.corners_1 }}</h3>
+      </div>
+      <div class="col">
+        <h2>Corners</h2>
+      </div>
+      <div class="col">
+        <h3>{{ match.corners_2 }}</h3>
+      </div>
+    </div>
+  </div>
+  <hr>
+  {% else %}
+    <h1>Match is yet to start</h1>
+ {% endif %}
+
+
+{% endblock %}
