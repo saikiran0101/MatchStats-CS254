@@ -14,8 +14,10 @@
         padding: 2px;;
 
     }
-    .change_color:hover{
-        background-color: rgb(196, 238, 98);
+    a.change_color:hover, a.change_color:active{
+        font-size: 120%;
+        
+        
     }
 </style>
 
@@ -29,17 +31,11 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
-            <th scope="col">jersey_no</th>
-            <th scope="col">Team</th>
-            <th scope="col">Positon</th>
-            <th scope="col">Goals</th>
-            <th scope="col">Assists</th>
            
-            <th scope="col">RedCards</th>
-            <th scope="col">yellowCards</th>
+            <th scope="col">Positon</th>
+            
             <th scope="col">Country</th>
-            <th scope="col">Height</th>
-            <th scope="col">D.O.B</th>
+            
           </tr>
         </thead>
         <tbody>
@@ -47,17 +43,14 @@
         <tr>
             <th scope="row">{{ forloop.counter }}</th>
             <td><a class="change_color" href="{% url 'main:player_detail' player.id %}" style="text-decoration: none; color: rgb(8, 8, 8);">{{ player.name }}</a></td>
-            <td>{{ player.jersey_no}}</td>
-            <td>{{player.team}}</td>
-            <td>{{ player.position }}</td>
-            <td>{{ player.goals}}</td>
-            <td>{{ player.assists }}</td>
             
-            <td>{{ player.red_cards }}</td>
-            <td>{{ player.yellow_cards}}</td>
+            
+            <td>{{ player.position }}</td>
+            
+            
+           
             <td>{{ player.nationality}}</td>
-            <td>{{ player.height}}</td>
-            <td>{{ player.dob }}</td>
+          
           </tr>
         {% endfor %}
         </tbody>
