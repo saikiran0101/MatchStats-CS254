@@ -13,7 +13,7 @@
   }
   
   h1 {
-    font-size: 32px;
+    /* font-size: 32px; */
     text-transform: uppercase;
     font-weight: 400;
     margin-bottom: 20px;
@@ -50,7 +50,7 @@
   }
   
   .red-card-box {
-    background-color: red;
+    background-color: rgba(248, 1, 1, 0.685);
     color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -99,7 +99,7 @@
          -->
          <div class="container col" >
          
-         <h1>Team:{{ player.team.name }}</h1>
+         <h1>{{ player.team.name }}</h1>
             <hr>
         <h4>Jersey No:{{player.jersey_no}}</h4> 
         <hr>   
@@ -123,7 +123,7 @@
         <hr>
         <h4>Height: {{ player.height }}</h4>
         <hr>
-            <div class="cards col" style="display: flex; width: 100%">
+            <div class="cards col " style="display:; width: 100%">
                 <h4>Cards:</h4>
                 <div class="red-card-box" style="width:60px; margin: 0 20px 0 20px;">
                     <h6> {{ player.red_cards }}</h6>
